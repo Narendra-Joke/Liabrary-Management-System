@@ -40,10 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 antMatchers("/txn/create","/txn/return").hasAuthority(adminAuthority).
                 antMatchers("/**").permitAll().and().formLogin();
     }
+
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-
-
 }

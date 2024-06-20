@@ -22,9 +22,9 @@ public class BookController {
     }
 
     @GetMapping("/find")
-    public List<Book> findBooks(@RequestParam("filter")BookFilterType bookFilterType,
+    public List<Book> findBooks(@RequestParam("filter") BookFilterType bookFilterType,
                                 @RequestParam("value") String value,
-                                @RequestParam("operation")OperationType operationType){
+                                @RequestParam("operation") OperationType operationType){
             return bookService.findBooks(bookFilterType,value,operationType);
     }
 }

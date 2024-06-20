@@ -61,16 +61,13 @@ public class BookService {
     }
 
     private void pushDataToRedisByCost(Book book){
-
             redisTemplate.opsForList().leftPush(BOOK_PREFIX_KEY+book.getCost(),book);
             redisTemplate.expire(BOOK_PREFIX_KEY+book.getCost(),10,TimeUnit.MINUTES);
     }
 
     private void pushDataToRedisByType(Book book){
-
             redisTemplate.opsForList().leftPush(BOOK_PREFIX_KEY+book.getType(),book);
             redisTemplate.expire(BOOK_PREFIX_KEY+book.getType(),10,TimeUnit.MINUTES);
-
     }
 
     public Book createUpdate(Book book){

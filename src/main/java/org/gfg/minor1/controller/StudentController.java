@@ -22,9 +22,9 @@ public class StudentController {
     }
 
     @GetMapping("/find")
-    public List<Student> findStudent(@RequestParam("filter")StudentFilterType studentFilterType,
+    public List<Student> findStudent(@RequestParam("filter") StudentFilterType studentFilterType,
                                      @RequestParam("value") String value,
-                                     @RequestParam("operation")OperationType operationType){
+                                     @RequestParam("operation") OperationType operationType){
         return studentService.findStudent(studentFilterType,value,operationType);
     }
 
